@@ -1,0 +1,836 @@
+{
+    "location": {
+        "address": {
+            "addressLine1": "2505 3rd Avenue",
+            "addressLine2": "",
+            "city": "Longmont",
+            "country": "",
+            "county": null,
+            "destinationLatitude": 0,
+            "destinationLongitude": 0,
+            "destinationState": null,
+            "formattedAddress": null,
+            "location": {
+                "latitude": 40.167666,
+                "longitude": -105.13359
+            },
+            "originLatitude": 0,
+            "originLongitude": 0,
+            "postalCode": "80503",
+            "state": null
+        },
+        "allowsReservations": false,
+        "coupons": [
+            {
+                "description": "13th Month Free",
+                "instructions": "13th Month Free"
+            },
+            {
+                "description": "2ND MONTH FREE W/1ST PAID",
+                "instructions": "2ND MONTH FREE W/1ST PAID"
+            },
+            {
+                "description": "1st Month Free",
+                "instructions": "1st Month Free"
+            }
+        ],
+        "facilityFeatures": [
+            {
+                "description": "",
+                "imageUrl": "http://www.webselfstorage.com/Image/a079d09e-cab1-4dd8-abdd-99116d815cff"
+            },
+            {
+                "description": "",
+                "imageUrl": "http://www.webselfstorage.com/Image/efe3cf96-f248-42b6-9add-e05dc9513794"
+            },
+            {
+                "description": "",
+                "imageUrl": "http://www.webselfstorage.com/Image/594e2508-e640-405b-b2bd-5da2d66effe1"
+            },
+            {
+                "description": "",
+                "imageUrl": "http://www.webselfstorage.com/Image/397b40bf-e620-4da5-86d3-b01da0e505e4"
+            },
+            {
+                "description": "",
+                "imageUrl": "http://www.webselfstorage.com/Image/20d1ab05-d84c-46d7-96e5-eaa3c900b828"
+            },
+            {
+                "description": "",
+                "imageUrl": "http://www.webselfstorage.com/Image/96df7c6c-e4d4-4c34-bb06-4809c796bbd6"
+            },
+            {
+                "description": "",
+                "imageUrl": "http://www.webselfstorage.com/Image/5e87df53-7434-4afb-84f9-0238b95e17d9"
+            }
+        ],
+        "hoursOfOperation": {
+            "gate": {
+                "friday": {
+                    "close": "",
+                    "isOpen": false,
+                    "open": ""
+                },
+                "monday": {
+                    "close": "",
+                    "isOpen": false,
+                    "open": ""
+                },
+                "saturday": {
+                    "close": "",
+                    "isOpen": false,
+                    "open": ""
+                },
+                "sunday": {
+                    "close": "",
+                    "isOpen": false,
+                    "open": ""
+                },
+                "thursday": {
+                    "close": "",
+                    "isOpen": false,
+                    "open": ""
+                },
+                "tuesday": {
+                    "close": "",
+                    "isOpen": false,
+                    "open": ""
+                },
+                "wednesday": {
+                    "close": "",
+                    "isOpen": false,
+                    "open": ""
+                }
+            },
+            "office": {
+                "friday": {
+                    "close": "17:00:00",
+                    "isOpen": true,
+                    "open": "09:00:00"
+                },
+                "monday": {
+                    "close": "17:00:00",
+                    "isOpen": true,
+                    "open": "09:00:00"
+                },
+                "saturday": {
+                    "close": "15:00:00",
+                    "isOpen": true,
+                    "open": "09:00:00"
+                },
+                "sunday": {
+                    "close": "15:00:00",
+                    "isOpen": true,
+                    "open": "09:00:00"
+                },
+                "thursday": {
+                    "close": "17:00:00",
+                    "isOpen": true,
+                    "open": "09:00:00"
+                },
+                "tuesday": {
+                    "close": "17:00:00",
+                    "isOpen": true,
+                    "open": "09:00:00"
+                },
+                "wednesday": {
+                    "close": "17:00:00",
+                    "isOpen": true,
+                    "open": "09:00:00"
+                }
+            }
+        },
+        "locationFeatures": [
+            {
+                "description": "Total account management"
+            },
+            {
+                "description": "Electronic Gate Access"
+            },
+            {
+                "description": "24-Hour Access"
+            },
+            {
+                "description": "Online payments"
+            },
+            {
+                "description": "Live-in Manager"
+            },
+            {
+                "description": "Video Surveillance"
+            }
+        ],
+        "locationServices": [
+            {
+                "amount": 1,
+                "description": "Total account management",
+                "locationServiceNumber": "d1ac2486-b433-4788-83d4-1bf54d72f076",
+                "taxable": "False"
+            },
+            {
+                "amount": 1,
+                "description": "Electronic Gate Access",
+                "locationServiceNumber": "f518f302-eaf8-4754-88a1-0572ac58c10e",
+                "taxable": "False"
+            },
+            {
+                "amount": 1,
+                "description": "24-Hour Access",
+                "locationServiceNumber": "8ee304f9-a131-40aa-bd55-0c68318b274c",
+                "taxable": "False"
+            },
+            {
+                "amount": 1,
+                "description": "Online payments",
+                "locationServiceNumber": "6b2d1146-701e-4703-af35-8b4943cdd1f0",
+                "taxable": "False"
+            },
+            {
+                "amount": 1,
+                "description": "Live-in Manager",
+                "locationServiceNumber": "b2563c8e-0428-4868-aae3-0a0d3147edd9",
+                "taxable": "False"
+            },
+            {
+                "amount": 1,
+                "description": "Video Surveillance",
+                "locationServiceNumber": "8e7b89f3-eeff-419b-81d1-b62ed995e431",
+                "taxable": "False"
+            }
+        ],
+        "name": "AAA Storage ",
+        "phone": "3037763629",
+        "reservationDates": [
+            "1/14/2025",
+            "1/15/2025",
+            "1/16/2025",
+            "1/17/2025",
+            "1/18/2025",
+            "1/19/2025",
+            "1/20/2025",
+            "1/21/2025",
+            "1/22/2025",
+            "1/23/2025",
+            "1/24/2025",
+            "1/25/2025",
+            "1/26/2025",
+            "1/27/2025",
+            "1/28/2025",
+            "1/29/2025",
+            "1/30/2025",
+            "1/31/2025",
+            "2/1/2025",
+            "2/2/2025",
+            "2/3/2025",
+            "2/4/2025",
+            "2/5/2025",
+            "2/6/2025",
+            "2/7/2025",
+            "2/8/2025",
+            "2/9/2025",
+            "2/10/2025",
+            "2/11/2025",
+            "2/12/2025",
+            "2/13/2025"
+        ],
+        "reservationNotBelowPercentage": "2",
+        "reservationNotBelowTotalUnits": "0",
+        "reviewFee": 0.0,
+        "units": [
+            {
+                "bonusComments": null,
+                "cubicFootage": 1377,
+                "orderGrouping": "000001Drive Up",
+                "squareFootage": 162,
+                "totalUnits": 3,
+                "unitFeature": null,
+                "unitStorageGuide": null,
+                "unitTypeImage": null,
+                "height": 8.5,
+                "insuranceOptions": [
+                    {
+                        "description": "Flood Insurance $10,000",
+                        "due": 0,
+                        "insuranceId": "e723628c-3468-43ed-91e5-2fa4939d7323",
+                        "monthlyRate": 21.95,
+                        "percentage": 0,
+                        "quantity": 0,
+                        "selected": false,
+                        "tax": 0.0000,
+                        "total": 0
+                    },
+                    {
+                        "description": "Flood Insurance $1,000",
+                        "due": 0,
+                        "insuranceId": "7e970da0-d30f-4700-aa92-7568d76ca899",
+                        "monthlyRate": 8.95,
+                        "percentage": 0,
+                        "quantity": 0,
+                        "selected": false,
+                        "tax": 0.0000,
+                        "total": 0
+                    },
+                    {
+                        "description": "Flood Insurance $5,000",
+                        "due": 0,
+                        "insuranceId": "2cfef7be-5e1e-46a0-b59b-e507b952fe29",
+                        "monthlyRate": 11.95,
+                        "percentage": 0,
+                        "quantity": 0,
+                        "selected": false,
+                        "tax": 0.0000,
+                        "total": 0
+                    },
+                    {
+                        "description": "Flood Insurance $20,000",
+                        "due": 0,
+                        "insuranceId": "e7fe4dec-85e4-40c8-a931-f9e52f4e15db",
+                        "monthlyRate": 40.95,
+                        "percentage": 0,
+                        "quantity": 0,
+                        "selected": false,
+                        "tax": 0.0000,
+                        "total": 0
+                    }
+                ],
+                "isCampusStorage": false,
+                "length": 18,
+                "monthly": 0.00,
+                "portable": {
+                    "isPortable": false,
+                    "onSiteOnly": false,
+                    "waiveDeliveryFee": false
+                },
+                "serviceCharges": null,
+                "sizeDescriptionsField": [
+                    "Drive Up 1st Floor Outside Level No Climate Drivethrough Rollup"
+                ],
+                "unitId": "73fd9cd6-e254-4578-8f3f-46b5234ae963",
+                "rentableObjectId": "abbca310-ded2-40fe-9c6e-1cb454323f76",
+                "unitSize": "9x18x8.5",
+                "vacantUnits": 3,
+                "width": 9
+            },
+            {
+                "bonusComments": null,
+                "cubicFootage": 1275,
+                "orderGrouping": "000002Drive Up",
+                "squareFootage": 150,
+                "totalUnits": 15,
+                "unitFeature": null,
+                "unitStorageGuide": null,
+                "unitTypeImage": null,
+                "height": 8.5,
+                "insuranceOptions": [
+                    {
+                        "description": "Flood Insurance $10,000",
+                        "due": 0,
+                        "insuranceId": "e723628c-3468-43ed-91e5-2fa4939d7323",
+                        "monthlyRate": 21.95,
+                        "percentage": 0,
+                        "quantity": 0,
+                        "selected": false,
+                        "tax": 0.0000,
+                        "total": 0
+                    },
+                    {
+                        "description": "Flood Insurance $1,000",
+                        "due": 0,
+                        "insuranceId": "7e970da0-d30f-4700-aa92-7568d76ca899",
+                        "monthlyRate": 8.95,
+                        "percentage": 0,
+                        "quantity": 0,
+                        "selected": false,
+                        "tax": 0.0000,
+                        "total": 0
+                    },
+                    {
+                        "description": "Flood Insurance $5,000",
+                        "due": 0,
+                        "insuranceId": "2cfef7be-5e1e-46a0-b59b-e507b952fe29",
+                        "monthlyRate": 11.95,
+                        "percentage": 0,
+                        "quantity": 0,
+                        "selected": false,
+                        "tax": 0.0000,
+                        "total": 0
+                    },
+                    {
+                        "description": "Flood Insurance $20,000",
+                        "due": 0,
+                        "insuranceId": "e7fe4dec-85e4-40c8-a931-f9e52f4e15db",
+                        "monthlyRate": 40.95,
+                        "percentage": 0,
+                        "quantity": 0,
+                        "selected": false,
+                        "tax": 0.0000,
+                        "total": 0
+                    }
+                ],
+                "isCampusStorage": false,
+                "length": 15,
+                "monthly": 0.00,
+                "portable": {
+                    "isPortable": false,
+                    "onSiteOnly": false,
+                    "waiveDeliveryFee": false
+                },
+                "serviceCharges": null,
+                "sizeDescriptionsField": [
+                    "Drive Up 1st Floor Outside Level No Climate Drivethrough Rollup"
+                ],
+                "unitId": "4b3fb7f3-9700-4448-bbe9-89e57885df32",
+                "rentableObjectId": "52829b06-ec48-4bcc-8042-3d8063109e74",
+                "unitSize": "10x15x8.5",
+                "vacantUnits": 15,
+                "width": 10
+            },
+            {
+                "bonusComments": null,
+                "cubicFootage": 425,
+                "orderGrouping": "000003Drive Up",
+                "squareFootage": 50,
+                "totalUnits": 24,
+                "unitFeature": null,
+                "unitStorageGuide": null,
+                "unitTypeImage": null,
+                "height": 8.5,
+                "insuranceOptions": [
+                    {
+                        "description": "Flood Insurance $10,000",
+                        "due": 0,
+                        "insuranceId": "e723628c-3468-43ed-91e5-2fa4939d7323",
+                        "monthlyRate": 21.95,
+                        "percentage": 0,
+                        "quantity": 0,
+                        "selected": false,
+                        "tax": 0.0000,
+                        "total": 0
+                    },
+                    {
+                        "description": "Flood Insurance $1,000",
+                        "due": 0,
+                        "insuranceId": "7e970da0-d30f-4700-aa92-7568d76ca899",
+                        "monthlyRate": 8.95,
+                        "percentage": 0,
+                        "quantity": 0,
+                        "selected": false,
+                        "tax": 0.0000,
+                        "total": 0
+                    },
+                    {
+                        "description": "Flood Insurance $5,000",
+                        "due": 0,
+                        "insuranceId": "2cfef7be-5e1e-46a0-b59b-e507b952fe29",
+                        "monthlyRate": 11.95,
+                        "percentage": 0,
+                        "quantity": 0,
+                        "selected": false,
+                        "tax": 0.0000,
+                        "total": 0
+                    },
+                    {
+                        "description": "Flood Insurance $20,000",
+                        "due": 0,
+                        "insuranceId": "e7fe4dec-85e4-40c8-a931-f9e52f4e15db",
+                        "monthlyRate": 40.95,
+                        "percentage": 0,
+                        "quantity": 0,
+                        "selected": false,
+                        "tax": 0.0000,
+                        "total": 0
+                    }
+                ],
+                "isCampusStorage": false,
+                "length": 10,
+                "monthly": 0.00,
+                "portable": {
+                    "isPortable": false,
+                    "onSiteOnly": false,
+                    "waiveDeliveryFee": false
+                },
+                "serviceCharges": null,
+                "sizeDescriptionsField": [
+                    "Drive Up 1st Floor Outside Level No Climate Drivethrough Rollup"
+                ],
+                "unitId": "0a34bb2d-4532-44b6-83e3-820b99f27dac",
+                "rentableObjectId": "ad63b407-e21a-4632-a31e-51b981fb396e",
+                "unitSize": "5x10x8.5",
+                "vacantUnits": 18,
+                "width": 5
+            },
+            {
+                "bonusComments": null,
+                "cubicFootage": 3400,
+                "orderGrouping": "000004Drive Up",
+                "squareFootage": 400,
+                "totalUnits": 3,
+                "unitFeature": null,
+                "unitStorageGuide": null,
+                "unitTypeImage": null,
+                "height": 8.5,
+                "insuranceOptions": [
+                    {
+                        "description": "Flood Insurance $10,000",
+                        "due": 0,
+                        "insuranceId": "e723628c-3468-43ed-91e5-2fa4939d7323",
+                        "monthlyRate": 21.95,
+                        "percentage": 0,
+                        "quantity": 0,
+                        "selected": false,
+                        "tax": 0.0000,
+                        "total": 0
+                    },
+                    {
+                        "description": "Flood Insurance $1,000",
+                        "due": 0,
+                        "insuranceId": "7e970da0-d30f-4700-aa92-7568d76ca899",
+                        "monthlyRate": 8.95,
+                        "percentage": 0,
+                        "quantity": 0,
+                        "selected": false,
+                        "tax": 0.0000,
+                        "total": 0
+                    },
+                    {
+                        "description": "Flood Insurance $5,000",
+                        "due": 0,
+                        "insuranceId": "2cfef7be-5e1e-46a0-b59b-e507b952fe29",
+                        "monthlyRate": 11.95,
+                        "percentage": 0,
+                        "quantity": 0,
+                        "selected": false,
+                        "tax": 0.0000,
+                        "total": 0
+                    },
+                    {
+                        "description": "Flood Insurance $20,000",
+                        "due": 0,
+                        "insuranceId": "e7fe4dec-85e4-40c8-a931-f9e52f4e15db",
+                        "monthlyRate": 40.95,
+                        "percentage": 0,
+                        "quantity": 0,
+                        "selected": false,
+                        "tax": 0.0000,
+                        "total": 0
+                    }
+                ],
+                "isCampusStorage": false,
+                "length": 40,
+                "monthly": 0.00,
+                "portable": {
+                    "isPortable": false,
+                    "onSiteOnly": false,
+                    "waiveDeliveryFee": false
+                },
+                "serviceCharges": null,
+                "sizeDescriptionsField": [
+                    "Drive Up 1st Floor Outside Level No Climate Drivethrough Rollup"
+                ],
+                "unitId": "afb26cbc-6256-4dc9-b890-ffe6a93f9239",
+                "rentableObjectId": "0fdcc0b2-b4e8-469c-b956-5adbb85f8d22",
+                "unitSize": "10x40x8.5",
+                "vacantUnits": 3,
+                "width": 10
+            },
+            {
+                "bonusComments": null,
+                "cubicFootage": 850,
+                "orderGrouping": "000005Drive Up",
+                "squareFootage": 100,
+                "totalUnits": 15,
+                "unitFeature": null,
+                "unitStorageGuide": null,
+                "unitTypeImage": null,
+                "height": 8.5,
+                "insuranceOptions": [
+                    {
+                        "description": "Flood Insurance $10,000",
+                        "due": 0,
+                        "insuranceId": "e723628c-3468-43ed-91e5-2fa4939d7323",
+                        "monthlyRate": 21.95,
+                        "percentage": 0,
+                        "quantity": 0,
+                        "selected": false,
+                        "tax": 0.0000,
+                        "total": 0
+                    },
+                    {
+                        "description": "Flood Insurance $1,000",
+                        "due": 0,
+                        "insuranceId": "7e970da0-d30f-4700-aa92-7568d76ca899",
+                        "monthlyRate": 8.95,
+                        "percentage": 0,
+                        "quantity": 0,
+                        "selected": false,
+                        "tax": 0.0000,
+                        "total": 0
+                    },
+                    {
+                        "description": "Flood Insurance $5,000",
+                        "due": 0,
+                        "insuranceId": "2cfef7be-5e1e-46a0-b59b-e507b952fe29",
+                        "monthlyRate": 11.95,
+                        "percentage": 0,
+                        "quantity": 0,
+                        "selected": false,
+                        "tax": 0.0000,
+                        "total": 0
+                    },
+                    {
+                        "description": "Flood Insurance $20,000",
+                        "due": 0,
+                        "insuranceId": "e7fe4dec-85e4-40c8-a931-f9e52f4e15db",
+                        "monthlyRate": 40.95,
+                        "percentage": 0,
+                        "quantity": 0,
+                        "selected": false,
+                        "tax": 0.0000,
+                        "total": 0
+                    }
+                ],
+                "isCampusStorage": false,
+                "length": 10,
+                "monthly": 0.00,
+                "portable": {
+                    "isPortable": false,
+                    "onSiteOnly": false,
+                    "waiveDeliveryFee": false
+                },
+                "serviceCharges": null,
+                "sizeDescriptionsField": [
+                    "Drive Up 1st Floor Outside Level No Climate Drivethrough Rollup"
+                ],
+                "unitId": "703a67ce-ea5e-4ce2-b216-b6fabfda6692",
+                "rentableObjectId": "8042900b-9c7f-4da2-85eb-8f08041a8627",
+                "unitSize": "10x10x8.5",
+                "vacantUnits": 15,
+                "width": 10
+            },
+            {
+                "bonusComments": null,
+                "cubicFootage": 2125,
+                "orderGrouping": "000006Drive Up",
+                "squareFootage": 250,
+                "totalUnits": 31,
+                "unitFeature": null,
+                "unitStorageGuide": null,
+                "unitTypeImage": null,
+                "height": 8.5,
+                "insuranceOptions": [
+                    {
+                        "description": "Flood Insurance $10,000",
+                        "due": 0,
+                        "insuranceId": "e723628c-3468-43ed-91e5-2fa4939d7323",
+                        "monthlyRate": 21.95,
+                        "percentage": 0,
+                        "quantity": 0,
+                        "selected": false,
+                        "tax": 0.0000,
+                        "total": 0
+                    },
+                    {
+                        "description": "Flood Insurance $1,000",
+                        "due": 0,
+                        "insuranceId": "7e970da0-d30f-4700-aa92-7568d76ca899",
+                        "monthlyRate": 8.95,
+                        "percentage": 0,
+                        "quantity": 0,
+                        "selected": false,
+                        "tax": 0.0000,
+                        "total": 0
+                    },
+                    {
+                        "description": "Flood Insurance $5,000",
+                        "due": 0,
+                        "insuranceId": "2cfef7be-5e1e-46a0-b59b-e507b952fe29",
+                        "monthlyRate": 11.95,
+                        "percentage": 0,
+                        "quantity": 0,
+                        "selected": false,
+                        "tax": 0.0000,
+                        "total": 0
+                    },
+                    {
+                        "description": "Flood Insurance $20,000",
+                        "due": 0,
+                        "insuranceId": "e7fe4dec-85e4-40c8-a931-f9e52f4e15db",
+                        "monthlyRate": 40.95,
+                        "percentage": 0,
+                        "quantity": 0,
+                        "selected": false,
+                        "tax": 0.0000,
+                        "total": 0
+                    }
+                ],
+                "isCampusStorage": false,
+                "length": 25,
+                "monthly": 0.00,
+                "portable": {
+                    "isPortable": false,
+                    "onSiteOnly": false,
+                    "waiveDeliveryFee": false
+                },
+                "serviceCharges": null,
+                "sizeDescriptionsField": [
+                    "Drive Up 1st Floor Outside Level No Climate Drivethrough Rollup"
+                ],
+                "unitId": "444af250-1a8e-4e36-9de2-291100cc56f1",
+                "rentableObjectId": "45f7fb72-c861-4961-b2b1-b2a7cd750391",
+                "unitSize": "10x25x8.5",
+                "vacantUnits": 22,
+                "width": 10
+            },
+            {
+                "bonusComments": null,
+                "cubicFootage": 1700,
+                "orderGrouping": "000007Drive Up",
+                "squareFootage": 200,
+                "totalUnits": 19,
+                "unitFeature": null,
+                "unitStorageGuide": null,
+                "unitTypeImage": null,
+                "height": 8.5,
+                "insuranceOptions": [
+                    {
+                        "description": "Flood Insurance $10,000",
+                        "due": 0,
+                        "insuranceId": "e723628c-3468-43ed-91e5-2fa4939d7323",
+                        "monthlyRate": 21.95,
+                        "percentage": 0,
+                        "quantity": 0,
+                        "selected": false,
+                        "tax": 0.0000,
+                        "total": 0
+                    },
+                    {
+                        "description": "Flood Insurance $1,000",
+                        "due": 0,
+                        "insuranceId": "7e970da0-d30f-4700-aa92-7568d76ca899",
+                        "monthlyRate": 8.95,
+                        "percentage": 0,
+                        "quantity": 0,
+                        "selected": false,
+                        "tax": 0.0000,
+                        "total": 0
+                    },
+                    {
+                        "description": "Flood Insurance $5,000",
+                        "due": 0,
+                        "insuranceId": "2cfef7be-5e1e-46a0-b59b-e507b952fe29",
+                        "monthlyRate": 11.95,
+                        "percentage": 0,
+                        "quantity": 0,
+                        "selected": false,
+                        "tax": 0.0000,
+                        "total": 0
+                    },
+                    {
+                        "description": "Flood Insurance $20,000",
+                        "due": 0,
+                        "insuranceId": "e7fe4dec-85e4-40c8-a931-f9e52f4e15db",
+                        "monthlyRate": 40.95,
+                        "percentage": 0,
+                        "quantity": 0,
+                        "selected": false,
+                        "tax": 0.0000,
+                        "total": 0
+                    }
+                ],
+                "isCampusStorage": false,
+                "length": 20,
+                "monthly": 0.00,
+                "portable": {
+                    "isPortable": false,
+                    "onSiteOnly": false,
+                    "waiveDeliveryFee": false
+                },
+                "serviceCharges": null,
+                "sizeDescriptionsField": [
+                    "Drive Up 1st Floor Outside Level No Climate Drivethrough Rollup"
+                ],
+                "unitId": "ac06d1bc-7c08-44ad-a025-5e2311c371e9",
+                "rentableObjectId": "2c504c50-db26-479f-94ab-d977ad102d3b",
+                "unitSize": "10x20x8.5",
+                "vacantUnits": 18,
+                "width": 10
+            },
+            {
+                "bonusComments": null,
+                "cubicFootage": 2550,
+                "orderGrouping": "000008Drive Up",
+                "squareFootage": 300,
+                "totalUnits": 23,
+                "unitFeature": null,
+                "unitStorageGuide": null,
+                "unitTypeImage": null,
+                "height": 8.5,
+                "insuranceOptions": [
+                    {
+                        "description": "Flood Insurance $10,000",
+                        "due": 0,
+                        "insuranceId": "e723628c-3468-43ed-91e5-2fa4939d7323",
+                        "monthlyRate": 21.95,
+                        "percentage": 0,
+                        "quantity": 0,
+                        "selected": false,
+                        "tax": 0.0000,
+                        "total": 0
+                    },
+                    {
+                        "description": "Flood Insurance $1,000",
+                        "due": 0,
+                        "insuranceId": "7e970da0-d30f-4700-aa92-7568d76ca899",
+                        "monthlyRate": 8.95,
+                        "percentage": 0,
+                        "quantity": 0,
+                        "selected": false,
+                        "tax": 0.0000,
+                        "total": 0
+                    },
+                    {
+                        "description": "Flood Insurance $5,000",
+                        "due": 0,
+                        "insuranceId": "2cfef7be-5e1e-46a0-b59b-e507b952fe29",
+                        "monthlyRate": 11.95,
+                        "percentage": 0,
+                        "quantity": 0,
+                        "selected": false,
+                        "tax": 0.0000,
+                        "total": 0
+                    },
+                    {
+                        "description": "Flood Insurance $20,000",
+                        "due": 0,
+                        "insuranceId": "e7fe4dec-85e4-40c8-a931-f9e52f4e15db",
+                        "monthlyRate": 40.95,
+                        "percentage": 0,
+                        "quantity": 0,
+                        "selected": false,
+                        "tax": 0.0000,
+                        "total": 0
+                    }
+                ],
+                "isCampusStorage": false,
+                "length": 30,
+                "monthly": 0.00,
+                "portable": {
+                    "isPortable": false,
+                    "onSiteOnly": false,
+                    "waiveDeliveryFee": false
+                },
+                "serviceCharges": null,
+                "sizeDescriptionsField": [
+                    "Drive Up 1st Floor Outside Level No Climate Drivethrough Rollup"
+                ],
+                "unitId": "9cc5e7fa-d5ca-4a8e-90f7-be8719a2c890",
+                "rentableObjectId": "cf498935-6e24-4d4c-8345-dde92af666b7",
+                "unitSize": "10x30x8.5",
+                "vacantUnits": 17,
+                "width": 10
+            }
+        ]
+    },
+    "success": true,
+    "errorMessage": ""
+}

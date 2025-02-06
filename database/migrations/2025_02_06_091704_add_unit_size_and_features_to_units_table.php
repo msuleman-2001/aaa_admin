@@ -14,7 +14,7 @@ return new class extends Migration
         Schema::table('units', function (Blueprint $table) {
             $table->integer('post_id')->nullable(); // String column
             $table->string('unit_size')->nullable(); // String column
-            $table->integer('unit_capacity')->nullable(); // Integer column
+            $table->integer('unit_features')->nullable(); // Integer column
         });
     }
 
@@ -24,7 +24,7 @@ return new class extends Migration
     public function down(): void
     {
         Schema::table('units', function (Blueprint $table) {
-            $table->dropColumn(['post_id', 'unit_size', 'unit_capacity']);
+            $table->dropColumn(['post_id', 'unit_size', 'unit_features']);
         });
     }
 };

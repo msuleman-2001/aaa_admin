@@ -60,6 +60,7 @@ class LocationController extends Controller
                 $post_id = DB::table('wp_posts')->insertGetId([
                     'post_author' => Auth::id(),
                     'post_title' => "",
+                    'post_content' => "",
                     'post_status' => "publish",
                     'post_type' => "unit",
                 ]);

@@ -88,7 +88,7 @@ class LocationController extends Controller
                     'unit_key' => $unit['unitId'],
                     'unit_size' => $unit['unitSize'],
                     'post_id' => $post_id,
-                    'unit_features' => '',
+                    'unit_features' => 'NA',
                     'enable' => true,
                     'created_by' => Auth::id(),
                     'updated_by' => Auth::id(),

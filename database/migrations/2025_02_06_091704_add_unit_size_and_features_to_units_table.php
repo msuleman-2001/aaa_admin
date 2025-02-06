@@ -14,7 +14,7 @@ return new class extends Migration
         Schema::table('units', function (Blueprint $table) {
             $table->integer('post_id')->nullable(); // String column
             $table->string('unit_size')->nullable(); // String column
-            $table->integer('unit_features')->nullable(); // Integer column
+            $table->string('unit_features')->nullable(); // Integer column
         });
     }
 

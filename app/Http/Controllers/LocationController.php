@@ -54,10 +54,23 @@ class LocationController extends Controller
         // Insert new records into the database
         foreach ($json_units as $unit) {
             if (in_array($unit['unitId'], $keys_to_insert)) {
+                //insertion required in wp_post table because loop grid (Elementor) only get data from Post
+                //insert a post with post type Unit and then put this post_id to Unit table
+
+                $post_id = DB::table('wp_post')->insertGetId([
+                    'post_author' => Auth::id(),
+                    'post_title' => "",
+                    'post_status' => "publish",
+                    'post_type' => "unit",
+                ]);
+
                 DB::table('units')->insert([
                     'location_number' => $location_number,
                     'rent_per_month' => 0,
                     'unit_key' => $unit['unitId'],
+                    'unit_size' => $unit['unitSize'],
+                    'post_id' => $post_id,
+                    'unit_features' => [],
                     'enable' => true,
                     'created_by' => Auth::id(),
                     'updated_by' => Auth::id(),

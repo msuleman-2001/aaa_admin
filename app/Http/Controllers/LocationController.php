@@ -59,10 +59,27 @@ class LocationController extends Controller
 
                 $post_id = DB::table('wp_posts')->insertGetId([
                     'post_author' => Auth::id(),
-                    'post_title' => "",
-                    'post_content' => "",
-                    'post_status' => "publish",
-                    'post_type' => "unit",
+                    'post_date' => now(),
+                    'post_date_gmt' => now(), 
+                    'post_content' => '',
+                    'post_title' => $unit['unitSize'],
+                    'post_excerpt' => '',
+                    'post_status' => 'publish',
+                    'comment_status' => '',
+                    'ping_status' => '',
+                    'post_password' => '',
+                    'post_name' => '',
+                    'to_ping' => '',
+                    'pinged' => '',
+                    'post_modified' => now(),
+                    'post_modified_gmt' => now(),
+                    'post_content_filtered' => '',
+                    'post_parent' => 0,
+                    'guid' => '',
+                    'menu_order' => 0, 
+                    'post_type' => 'unit',
+                    'post_mime_type' => '',
+                    'comment_count' => 0
                 ]);
 
                 DB::table('units')->insert([

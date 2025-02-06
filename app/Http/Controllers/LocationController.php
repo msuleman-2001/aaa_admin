@@ -57,7 +57,7 @@ class LocationController extends Controller
                 //insertion required in wp_post table because loop grid (Elementor) only get data from Post
                 //insert a post with post type Unit and then put this post_id to Unit table
 
-                $post_id = DB::table('wp_post')->insertGetId([
+                $post_id = DB::table('wp_posts')->insertGetId([
                     'post_author' => Auth::id(),
                     'post_title' => "",
                     'post_status' => "publish",

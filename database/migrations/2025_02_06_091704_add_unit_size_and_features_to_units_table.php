@@ -1,19 +1,30 @@
+<?php
+
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-return new class extends Migration {
-    public function up() {
+return new class extends Migration
+{
+    /**
+     * Run the migrations.
+     */
+    public function up(): void
+    {
         Schema::table('units', function (Blueprint $table) {
-            $table->integer('post_id')->nullable();
-            $table->string('unit_size')->nullable();
-            $table->json('unit_features')->nullable();
+            $table->integer('post_id')->nullable(); // String column
+            $table->string('unit_size')->nullable(); // String column
+            $table->integer('unit_capacity')->nullable(); // Integer column
         });
     }
 
-    public function down() {
+    /**
+     * Reverse the migrations.
+     */
+    public function down(): void
+    {
         Schema::table('units', function (Blueprint $table) {
-            $table->dropColumn(['post_id','unit_size', 'unit_features']);
+            $table->dropColumn(['post_id', 'unit_size', 'unit_capacity']);
         });
     }
 };

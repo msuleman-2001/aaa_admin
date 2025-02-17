@@ -73,7 +73,7 @@ Route::middleware('auth')->group(function () {
     Route::get('/unit-list', [UnitController::class, 'unitList'])->name('unit-list');
     Route::get('/unit-detail/{unit_id?}', [UnitController::class, 'unitDetail'])->name('unit-detail');
     Route::post('/set-unit-activate-status', [UnitController::class, 'setActivateStatus'])->name('set-unit-activate-status');
-    Route::post('/update-rent', [UnitController::class, 'updateRent'])->name('update-rent');
+    Route::post('/update-unit', [UnitController::class, 'updateUnit'])->name('update-unit');
 
     //customer routes
     Route::get('/customer-list', [CustomerController::class, 'customerList'])->name('customer-list');

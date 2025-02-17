@@ -17,7 +17,7 @@ class UnitController extends Controller
         return view ('unit-list', compact('locations', 'units'));
     }
 
-    public function updateRent(Request $request){
+    public function updateUnit(Request $request){
         try{
             $message = 'Rent updated';
             $status = true;
@@ -25,7 +25,9 @@ class UnitController extends Controller
             $unit = Unit::find($request->unit_id);
 
             if ($unit){
+                $unit->old_rate = $unit->rent_per_month;
                 $unit->rent_per_month = $request->rent_per_month;
+                $unit->unit_features = json_encode(explode("\n", trim($request->features)));
                 $unit->updated_by = Auth::id();
                 $unit->updated_at = now();
                 $unit->save();

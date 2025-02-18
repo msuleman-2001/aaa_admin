@@ -19,7 +19,7 @@ class UnitController extends Controller
 
     public function updateUnit(Request $request){
         try{
-            $message = 'Rent updated';
+            $message = 'Unit updated';
             $status = true;
 
             $unit = Unit::find($request->unit_id);
@@ -27,6 +27,24 @@ class UnitController extends Controller
             if ($unit){
                 $unit->old_rate = $unit->rent_per_month;
                 $unit->rent_per_month = $request->rent_per_month;
+                $coupons = explode("\n", trim($request->coupons)); // Split input into lines
+                $selected_index = $request->selected_coupon_index ? $request->selected_coupon_index : -1;
+                
+                $coupon_json = [];
+                $index = 0;
+                foreach ($coupons as $coupon) {
+                    $parts = array_map('trim', explode(',', $coupon, 2)); // Split by comma and trim spaces
+
+                    if (count($parts) === 2) {
+                        $index++;
+                        $coupon_json[] = [
+                            "couponName" => $parts[0],
+                            "couponValue" => $parts[1],
+                            "selected" => $index == $selected_index ? "1" : "0"
+                        ];
+                    }
+                }
+                $unit->coupons_data = json_encode($coupon_json, true);
                 $unit->unit_features = json_encode(explode("\n", trim($request->features)));
                 $unit->updated_by = Auth::id();
                 $unit->updated_at = now();

@@ -12,17 +12,23 @@
         async function updateUnit(){
             let txtRent = document.getElementById('txtRentPerMonth');
             let txtFeatures = document.getElementById('txtFeatures');
+            let txtCoupons = document.getElementById('txtCoupons');
+            let txtSelectedCouponIndex = document.getElementById('txtSelectedCouponIndex');
             
             let span_status = document.getElementById('spanStatus');
             let new_rent = txtRentPerMonth.value;
             let features = txtFeatures.value;
+            let coupons = txtCoupons.value;
+            let selected_coupon_index = txtSelectedCouponIndex.value;
             const current_url = window.location.pathname; 
             
             const unit_id = current_url.split('/').pop();
             const url = "{{ route('update-unit') }}";
             span_status.innerText = 'Updating data ...';
-            
-            let payload = JSON.stringify({unit_id: unit_id, rent_per_month: new_rent, features: features });
+
+            let payload = JSON.stringify({unit_id: unit_id, rent_per_month: new_rent, features: features, coupons: coupons, selected_coupon_index: selected_coupon_index });
+            alert(payload);
+            //return;
             try {
                 let response = await fetch(url, {
                     method: "post",
@@ -69,9 +75,45 @@
                                     <div class="vue-misc">
                                         <div class="row">
                                             <div class="col-md-6">
-                                                <p><strong>Size:</strong>
-                                                <span>{{ $unit->location_number }}</span></p>
-                                                <p><strong>Insurance Options:</strong><br />
+                                                <div class="row mt-3 mb-3">
+                                                    <div class="col">
+                                                        <strong>Unit Size</strong>
+                                                    </div>
+                                                    <div class="col">{{ $unit->unit_size }}</div>
+                                                </div>
+                                                <div class="row mt-3 mb-3">
+                                                    <div class="col">
+                                                        <strong>Enter Coupon (Coupon Name, Amount)</strong>
+                                                    </div>
+                                                </div>
+                                                <div class="row mt-3 mb-3">
+                                                    <div class="col">
+                                                        @php
+                                                            $coupons_array = json_decode($unit->coupons_data, true);
+                                                            $coupons_data = "";
+                                                            $selected_index = "";
+                                                            $index = 1;
+                                                            if (!empty($coupons_array)){
+                                                                foreach ($coupons_array as $coupon){
+                                                                    $coupons_data .= $coupon['couponName'] . ", " . $coupon['couponValue'] . "\n";
+                                                                    if ($coupon['selected'] == 1)
+                                                                        $selected_index = $index;
+                                                                    $index++;
+                                                                }
+                                                            }
+                                                        @endphp
+                                                        <textarea name="txtCoupons" id="txtCoupons" rows="4" class="form-control">{{ $coupons_data }}</textarea>
+                                                    </div>
+                                                </div>
+                                                <div class="row mt-3 mb-3">
+                                                    <div class="col">
+                                                        <strong>Selected Coupon (row number)</strong>
+                                                    </div>
+                                                    <div class="col">
+                                                        <input type="text" id="txtSelectedCouponIndex" name="txtSelectedCouponIndex" class="form-control" value="{{ $selected_index }}">
+                                                    </div>
+                                                </div>
+                                                <!-- <p><strong>Insurance Options:</strong><br />
                                                 @php
                                                     $insurance_options = json_decode($unit->insurance_options, true);
                                                 @endphp
@@ -83,35 +125,48 @@
                                                     </ul>
                                                 @else
                                                     <p>No insurance options available.</p>
-                                                @endif
-                                                <p><strong>New Rate</strong><br>
-                                                <input class="form-control" type="text" id="txtRentPerMonth" name="txtRentPerMonth" value="{{ $unit->rent_per_month }}" data-unit-id="{{ $unit->unit_id }}"><br />
-                                                <button onclick="updateUnit()" class="btn-sm btn-success">Update</button><br>
-                                                <span id="spanStatus"></span></p>
+                                                @endif -->
+                                                <div class="row mt-3 mb-3"">
+                                                    <div class="col">
+                                                        <strong>New Rent</strong>
+                                                    </div>
+                                                    <div class="col">
+                                                        <input class="form-control" type="text" id="txtRentPerMonth" name="txtRentPerMonth" value="{{ $unit->rent_per_month }}" data-unit-id="{{ $unit->unit_id }}">
+                                                    </div>
+                                                </div>
+                                                <div class="row mt-3 mb-3">
+                                                    <div class="col">
+                                                    <span id="spanStatus"></span>
+                                                    </div>
+                                                </div>
                                             </div>
                                             <div class="col-md-6">
-                                                <p><strong>Features</strong></p>
-                                                @php
-                                                    $features = json_decode($unit->unit_features, true);
-                                                @endphp
-                                                <p>
-                                                    <textarea class="form-control" name="txtFeatures" id="txtFeatures" rows="11">{{ implode("\n", $features) }}</textarea>
-                                                </p>
-                                                <p><button onclick="updateUnit()" class="btn-sm btn-success">Update</button></p>
+                                                <div class="row mt-3 mb-3">
+                                                    <div class="col">
+                                                        <strong>Features</strong>
+                                                    </div>
+                                                </div>
+                                                <div class="row mt-3 mb-3">
+                                                    <div class="col">
+                                                        @php
+                                                            $features = json_decode($unit->unit_features, true);
+                                                        @endphp
+                                                        <textarea class="form-control" name="txtFeatures" id="txtFeatures" rows="10">{{ implode("\n", $features) }}</textarea>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="row mt-3 mb-3">
+                                            <div class="col">
+                                                <button onclick="updateUnit()" class="btn btn-success">Save</button>
                                             </div>
                                         </div>
                                     </div>
-
                                 </div>
                             </div>
-
-
                         </div>
                     </div>
                 </div>
-
-
-
             </div><!-- .animated -->
         </div><!-- .content -->
 

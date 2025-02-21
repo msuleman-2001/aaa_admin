@@ -42,7 +42,7 @@
                                                 <td>{{ $payment->move_in_date }}</td>
                                                 <td>{{ $payment->pay_amount }}</td>
                                                 <td>
-                                                    <a href="{{ route('payment-detail', ['payment' => $payment->payment_id]) }}" class="btn btn-danger">Details</a>
+                                                    <a href="{{ route('payment-detail', ['payment_id' => $payment->payment_id]) }}" class="btn btn-danger">Details</a>
                                                 </td>
                                             </tr>
                                         @endforeach

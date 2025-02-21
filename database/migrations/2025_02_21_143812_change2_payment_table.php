@@ -11,9 +11,8 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('transactions', function (Blueprint $table) {
-            $table->id();
-            $table->string('transaction_id')->unique();
+        Schema::create('payments', function (Blueprint $table) {
+            $table->id('payment_id');
             $table->string('customer_name');
             $table->string('customer_email');
             $table->string('customer_phone');
@@ -22,7 +21,6 @@ return new class extends Migration
             $table->date('move_in_date');
             $table->string('insurance_id');
             $table->decimal('pay_amount', 10, 2);
-            $table->dateTime('created_date');
             $table->text('remarks')->nullable();
             $table->timestamps();
         });

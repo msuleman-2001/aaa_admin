@@ -5,12 +5,15 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Transaction extends Model
+class Payment extends Model
 {
     use HasFactory;
 
+    public $timestamps = true;
+    protected $primaryKey = 'payment_id';
+
     protected $fillable = [
-        'transaction_id',
+        'payment_id',
         'customer_name',
         'customer_email',
         'customer_phone',

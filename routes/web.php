@@ -81,6 +81,7 @@ Route::middleware('auth')->group(function () {
 
     //payment routes
     Route::get('/payment-list', [PaymentController::class, 'paymentList'])->name('payment-list');
+    Route::get('/payment-detail/{payment_id?}', [PaymentController::class, 'paymentDetail'])->name('payment-detail');
 
     //review routes
     Route::get('/review-list', [ReviewController::class, 'reviewList'])->name('review-list');

@@ -27,19 +27,25 @@
                                 <table class="table">
                                     <thead>
                                         <tr>
-                                            <th scope="col">#</th>
                                             <th scope="col">Customer</th>
-                                            <th scope="col">Amoutn</th>
+                                            <th scope="col">Phone</th>
+                                            <th scope="col">Move In Date</th>
+                                            <th scope="col">Amount</th>
                                             <th scope="col">Details</th>
                                         </tr>
                                     </thead>
                                     <tbody>
-                                        <tr>
-                                            <th scope="row">1</th>
-                                            <td>Mark</td>
-                                            <td>$120</td>
-                                            <td>some detailsdfdsfsfasfasfssad</td>
-                                        </tr>
+                                        @foreach ($payments as $payment)
+                                            <tr>
+                                                <td>{{ $payment->customer_name }}</td>
+                                                <td>{{ $payment->customer_phone }}</td>
+                                                <td>{{ $payment->move_in_date }}</td>
+                                                <td>{{ $payment->pay_amount }}</td>
+                                                <td>
+                                                    <a href="{{ route('payment-detail', ['payment' => $payment->payment_id]) }}" class="btn btn-danger">Details</a>
+                                                </td>
+                                            </tr>
+                                        @endforeach
                                     </tbody>
                                 </table>
                             </div>

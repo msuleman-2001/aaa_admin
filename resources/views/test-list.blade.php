@@ -23,6 +23,9 @@
                             <div class="card-header">
                                 <strong class="card-title">Test page</strong>
                             </div>
+                            <div>
+                                <?php echo $res_json; ?>
+                            </div>
                             <div class="card-body">
                                 <table class="table">
                                     <thead>

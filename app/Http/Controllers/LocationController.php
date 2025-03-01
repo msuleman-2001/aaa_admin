@@ -18,7 +18,7 @@ class LocationController extends Controller
         $response = Http::withHeaders([
             'Authorization' => 'Bearer ' . $token, // Include the token in the Authorization header
             'Accept' => 'application/json',       // Optional, ensures the response is in JSON format
-        ])->get('https://api.webselfstorage.com/v3/location/' . $location_number);
+        ])->get('https://api.webselfstorage.com/v3/movein/' . $location_number);
     
         if ($response->successful()) {
             $location_data = $response->json();

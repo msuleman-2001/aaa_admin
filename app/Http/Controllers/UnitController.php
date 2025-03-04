@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Storage;
+use Illuminate\Support\Facades\DB;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\Location;
@@ -11,10 +13,85 @@ use App\Models\Unit;
 class UnitController extends Controller
 {
     public function unitList(){
+        $path = storage_path('app\unitRes.json');
+        
+        $json_content = file_get_contents($path);
+        $unit_json = json_decode($json_content, true);
+        $available_units = $unit_json['availableUnits'];
+        $location_number = "1038525";
+        $this->updateUnitsInLocalDB($available_units, $location_number);
+        
         $locations = Location::all();
         $location_number = $locations->first()->location_number;
         $units = Unit::where('location_number', $location_number)->get();
         return view ('unit-list', compact('locations', 'units'));
+    }
+
+    public function updateUnitsInLocalDB($json_units, $location_number){
+        // Fetch all current database unit keys
+        $db_units = DB::table('units')->pluck('unit_key')->toArray();
+        
+        // Extract unit keys from the JSON data
+        $json_unit_keys = array_column($json_units, 'rentableObjectId');
+        
+        // Find unit keys to delete (exist in DB  but not in JSON)
+        $keys_to_delete = array_diff($db_units, $json_unit_keys);
+        
+        // Find unit keys to insert (exist in JSON but not in DB)
+        $keys_to_insert = array_diff($json_unit_keys, $db_units);
+        
+        // Delete records from the database
+        if (!empty($keys_to_delete)) {
+            DB::table('units')->whereIn('unit_key', $keys_to_delete)->delete();
+        }
+        
+        // Insert new records into the database
+        foreach ($json_units as $unit) {
+            
+            if (in_array($unit['rentableObjectId'], $keys_to_insert)) {
+                //insertion required in wp_post table because loop grid (Elementor) only get data from Post
+                //insert a post with post type Unit and then put this post_id to Unit table
+                
+                $post_id = DB::table('wp_posts')->insertGetId([
+                    'post_author' => Auth::id(),
+                    'post_date' => now(),
+                    'post_date_gmt' => now(), 
+                    'post_content' => '',
+                    'post_title' => $unit['unitSize'],
+                    'post_excerpt' => '',
+                    'post_status' => 'publish',
+                    'comment_status' => '',
+                    'ping_status' => '',
+                    'post_password' => '',
+                    'post_name' => '',
+                    'to_ping' => '',
+                    'pinged' => '',
+                    'post_modified' => now(),
+                    'post_modified_gmt' => now(),
+                    'post_content_filtered' => '',
+                    'post_parent' => 0,
+                    'guid' => '',
+                    'menu_order' => 0, 
+                    'post_type' => 'unit',
+                    'post_mime_type' => '',
+                    'comment_count' => 0
+                ]);
+
+                DB::table('units')->insert([
+                    'location_number' => $location_number,
+                    'rent_per_month' => $unit['monthly'],
+                    'insurance_options' => json_encode($unit['insuranceOptions']),
+                    'unit_key' => $unit['rentableObjectId'],
+                    'unit_size' => $unit['unitSize'],
+                    'post_id' => $post_id,
+                    'enable' => true,
+                    'created_by' => Auth::id(),
+                    'updated_by' => Auth::id(),
+                    'created_at' => now(),
+                    'updated_at' => now(),
+                ]);
+            }
+        }
     }
 
     public function updateUnit(Request $request){

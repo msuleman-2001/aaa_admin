@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Storage;
+use Illuminate\Support\Facades\Http;
 use Illuminate\Support\Facades\DB;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
@@ -14,11 +15,24 @@ class UnitController extends Controller
 {
     public function unitList(){
         $path = storage_path('app\unitRes.json');
-        
-        $json_content = file_get_contents($path);
-        $unit_json = json_decode($json_content, true);
-        $available_units = $unit_json['availableUnits'];
+        $file_content = file_get_contents($path);
+        $json_content = json_decode($file_content, true);
+
         $location_number = "1038525";
+        // $token = '5a5042a0-2c6e-4b8c-8d8a-0bc33470a9ad';
+        // $location_number = "1038525";
+        // $response = Http::withHeaders([
+        //     'Authorization' => 'Bearer ' . $token, // Include the token in the Authorization header
+        //     'Accept' => 'application/json',        // Optional, ensures the response is in JSON format
+        // ])->get('https://api.webselfstorage.com/v3/movein/' . $location_number);
+    
+        // if ($response->successful()) 
+        //     $json_content = $response->json();
+            
+        
+        $unit_json = $json_content;
+        $available_units = $unit_json['availableUnits'];
+        
         $this->updateUnitsInLocalDB($available_units, $location_number);
         
         $locations = Location::all();

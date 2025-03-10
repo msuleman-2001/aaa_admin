@@ -150,8 +150,9 @@
                                                     <div class="col">
                                                         @php
                                                             $features = $unit->unit_features;
+                                                            $feature_list = $features ? json_decode($features, true) : [];
                                                         @endphp
-                                                        <textarea class="form-control" name="txtFeatures" id="txtFeatures" rows="10">{{ implode("\n", json_decode($features, true)) }}</textarea>
+                                                        <textarea class="form-control" name="txtFeatures" id="txtFeatures" rows="10">{{ implode("\n", $feature_list) }}</textarea>
                                                     </div>
                                                 </div>
                                             </div>

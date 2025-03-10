@@ -149,9 +149,9 @@
                                                 <div class="row mt-3 mb-3">
                                                     <div class="col">
                                                         @php
-                                                            $features = json_decode($unit->unit_features, true);
+                                                            $features = $unit->unit_features;
                                                         @endphp
-                                                        <textarea class="form-control" name="txtFeatures" id="txtFeatures" rows="10">{{ implode("\n", $features) }}</textarea>
+                                                        <textarea class="form-control" name="txtFeatures" id="txtFeatures" rows="10">{{ implode("\n", json_decode($features, true)) }}</textarea>
                                                     </div>
                                                 </div>
                                             </div>

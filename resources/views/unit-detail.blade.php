@@ -27,7 +27,6 @@
             span_status.innerText = 'Updating data ...';
 
             let payload = JSON.stringify({unit_id: unit_id, rent_per_month: new_rent, features: features, coupons: coupons, selected_coupon_index: selected_coupon_index });
-            alert(payload);
             //return;
             try {
                 let response = await fetch(url, {
@@ -128,7 +127,7 @@
                                                 @endif -->
                                                 <div class="row mt-3 mb-3"">
                                                     <div class="col">
-                                                        <strong>New Rent</strong>
+                                                        <strong>Old Rent</strong>
                                                     </div>
                                                     <div class="col">
                                                         <input class="form-control" type="text" id="txtRentPerMonth" name="txtRentPerMonth" value="{{ $unit->rent_per_month }}" data-unit-id="{{ $unit->unit_id }}">

@@ -94,7 +94,7 @@ class UnitController extends Controller
                 DB::table('units')->insert([
                     'location_number' => $location_number,
                     'rent_per_month' => $unit['monthly'],
-                    'insurance_options' => json_encode($unit['insuranceOptions']),
+                    'insurance_options' => $this->replaceFlood(json_encode($unit['insuranceOptions'])),
                     'unit_key' => $unit['rentableObjectId'],
                     'unit_size' => $unit['unitSize'],
                     'post_id' => $post_id,
@@ -108,6 +108,11 @@ class UnitController extends Controller
         }
     }
 
+    public function replaceFlood($insuranceOptions){
+        $insuranceOptions = str_replace("Flood", "Tenant", $insuranceOptions);
+        return $insuranceOptions;
+    }
+
     public function updateUnit(Request $request){
         try{
             $message = 'Unit updated';
@@ -116,8 +121,7 @@ class UnitController extends Controller
             $unit = Unit::find($request->unit_id);
 
             if ($unit){
-                $unit->old_rate = $unit->rent_per_month;
-                $unit->rent_per_month = $request->rent_per_month;
+                $unit->old_rate = $request->rent_per_month;
                 $coupons = explode("\n", trim($request->coupons)); // Split input into lines
                 $selected_index = $request->selected_coupon_index ? $request->selected_coupon_index : -1;
                 

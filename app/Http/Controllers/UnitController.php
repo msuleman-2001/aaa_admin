@@ -14,6 +14,7 @@ use App\Models\Unit;
 class UnitController extends Controller
 {
     public function unitList(){
+        $json_content = "";
         $path = storage_path('app\unitRes.json');
         $file_content = file_get_contents($path);
         $json_content = json_decode($file_content, true);
@@ -104,6 +105,18 @@ class UnitController extends Controller
                     'created_at' => now(),
                     'updated_at' => now(),
                 ]);
+            } else {
+                
+                $db_unit = Unit::where('unit_key', $unit['rentableObjectId'])->first();
+                if ($db_unit){
+                    $db_unit->rent_per_month = $unit['monthly'];
+                    $db_unit->insurance_options = $this->replaceFlood(json_encode($unit['insuranceOptions']));
+                    $db_unit->updated_at = now();
+                    $db_unit->unit_size = $unit['unitSize'];
+                    $db_unit->cubic_footage = $unit['cubicFootage'];
+                    $db_unit->location_name = $unit['locationName'];
+                    $db_unit->save();
+                }
             }
         }
     }
@@ -139,10 +152,18 @@ class UnitController extends Controller
                         ];
                     }
                 }
+                $title_image_path = "";
+                if ($request->hasFile('title_image')) {
+                    $image = $request->file('title_image');
+                    $image_name = time().'_'.$image->getClientOriginalName();
+                    $image->move(public_path('assets/images/unit_images'), $image_name);
+                    $title_image_path = 'assets/images/unit_images/' . $image_name;
+                }
                 $unit->coupons_data = json_encode($coupon_json, true);
                 $unit->unit_features = json_encode(explode("\n", trim($request->features)));
                 $unit->updated_by = Auth::id();
                 $unit->updated_at = now();
+                $unit->title_image = $title_image_path;
                 $unit->save();
             }
             else{

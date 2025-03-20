@@ -14,25 +14,36 @@
             let txtFeatures = document.getElementById('txtFeatures');
             let txtCoupons = document.getElementById('txtCoupons');
             let txtSelectedCouponIndex = document.getElementById('txtSelectedCouponIndex');
-            
+            let fulTitleImage = document.getElementById('fulTitleImage');
             let span_status = document.getElementById('spanStatus');
-            let new_rent = txtRentPerMonth.value;
-            let features = txtFeatures.value;
-            let coupons = txtCoupons.value;
-            let selected_coupon_index = txtSelectedCouponIndex.value;
+
+            let update_values = new FormData();
+            update_values.append('rent_per_month', txtRent.value);
+            update_values.append('features', txtFeatures.value);
+            update_values.append('coupons', txtCoupons.value);
+            update_values.append('selected_coupon_index', txtSelectedCouponIndex.value);
+            
+            // Append image file if selected
+            if (fulTitleImage.files.length > 0) {
+                update_values.append('title_image', fulTitleImage.files[0]); // 'title_image' is field name
+            }
+            
+            //add file upload code here
             const current_url = window.location.pathname; 
             
             const unit_id = current_url.split('/').pop();
+            
+            update_values.append('unit_id', unit_id);
             const url = "{{ route('update-unit') }}";
             span_status.innerText = 'Updating data ...';
-
-            let payload = JSON.stringify({unit_id: unit_id, rent_per_month: new_rent, features: features, coupons: coupons, selected_coupon_index: selected_coupon_index });
+            
+            let payload = update_values;
+            alert(payload);
             //return;
             try {
                 let response = await fetch(url, {
                     method: "post",
                     headers: {
-                        "Content-Type": "application/json",
                         "X-CSRF-TOKEN": "{{ csrf_token() }}" // Include CSRF token for security
                     },
                     body: payload
@@ -101,7 +112,7 @@
                                                                 }
                                                             }
                                                         @endphp
-                                                        <textarea name="txtCoupons" id="txtCoupons" rows="4" class="form-control">{{ $coupons_data }}</textarea>
+                                                        <textarea name="txtCoupons" id="txtCoupons" rows="8" class="form-control">{{ $coupons_data }}</textarea>
                                                     </div>
                                                 </div>
                                                 <div class="row mt-3 mb-3">
@@ -130,7 +141,7 @@
                                                         <strong>Old Rent</strong>
                                                     </div>
                                                     <div class="col">
-                                                        <input class="form-control" type="text" id="txtRentPerMonth" name="txtRentPerMonth" value="{{ $unit->rent_per_month }}" data-unit-id="{{ $unit->unit_id }}">
+                                                        <input class="form-control" type="text" id="txtRentPerMonth" name="txtRentPerMonth" value="" data-unit-id="{{ $unit->unit_id }}">
                                                     </div>
                                                 </div>
                                                 <div class="row mt-3 mb-3">
@@ -151,8 +162,19 @@
                                                             $features = $unit->unit_features;
                                                             $feature_list = $features ? json_decode($features, true) : [];
                                                         @endphp
-                                                        <textarea class="form-control" name="txtFeatures" id="txtFeatures" rows="10">{{ implode("\n", $feature_list) }}</textarea>
+                                                        <textarea class="form-control" name="txtFeatures" id="txtFeatures" rows="8">{{ implode("\n", $feature_list) }}</textarea>
                                                     </div>
+                                                </div>
+                                                <div class="row mt-3 mb-3"">
+                                                    <div class="col">
+                                                        <strong>Select Title Image for Unit</strong>
+                                                    </div>
+                                                    <div class="col">
+                                                        <input class="form-control" type="file" id="fulTitleImage" name="fulTitleImage" value="" data-unit-id="{{ $unit->unit_id }}">
+                                                    </div>
+                                                </div>
+                                                <div class="row mb-3 ml-3">
+                                                    <img src="{{ asset($unit->title_image) }}" height="100px" alt="title image">
                                                 </div>
                                             </div>
                                         </div>

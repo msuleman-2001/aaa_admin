@@ -38,7 +38,7 @@
             span_status.innerText = 'Updating data ...';
             
             let payload = update_values;
-            alert(payload);
+            
             //return;
             try {
                 let response = await fetch(url, {

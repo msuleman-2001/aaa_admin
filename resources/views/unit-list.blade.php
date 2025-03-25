@@ -86,6 +86,7 @@
                                                 <th scope="col">Location Name</th>
                                                 <th scope="col">Rent (Per Month)</th>
                                                 <th scope="col">Unit Size</th>
+                                                <th scope="col">Enable</th>
                                                 <th scope="col">View Details</th>
                                             </tr>
                                         </thead>
@@ -98,11 +99,12 @@
                                                     <td>{{ $counter }}</td>
                                                     <td>{{ $unit->location_name }}</td>
                                                     <td>{{ $unit->rent_per_month }}</td>
-                                                    <td>{{ $unit->unit_size }}
-                                                        <!-- <div class="custom-control custom-switch">
+                                                    <td>{{ $unit->unit_size }}</td>
+                                                    <td>
+                                                        <div class="custom-control custom-switch">
                                                             <input type="checkbox" class="custom-control-input" data-id="{{ $unit->unit_id }}" id="chkEnable{{$unit->unit_id}}" name="chkEnable{{$unit->unit_id}}" onchange="updateActivationStatus(this)" {{ $unit->enable ? 'checked' : '' }}>
                                                             <label class="custom-control-label" for="chkEnable{{$unit->unit_id}}"><span id="spanStatus{{ $unit->unit_id }}"></span></label>
-                                                        </div> -->
+                                                        </div>
                                                     </td>
                                                     <td>
                                                         <a href="{{ route('unit-detail', ['unit_id' => $unit->unit_id]) }}" class="btn-sm btn-danger">View Details</a>

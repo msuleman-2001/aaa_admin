@@ -152,7 +152,7 @@ class UnitController extends Controller
                         ];
                     }
                 }
-                $title_image_path = "";
+                $title_image_path = $unit->title_image;
                 if ($request->hasFile('title_image')) {
                     $image = $request->file('title_image');
                     $image_name = time().'_'.$image->getClientOriginalName();

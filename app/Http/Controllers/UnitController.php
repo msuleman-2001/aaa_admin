@@ -98,12 +98,14 @@ class UnitController extends Controller
                     'insurance_options' => $this->replaceFlood(json_encode($unit['insuranceOptions'])),
                     'unit_key' => $unit['rentableObjectId'],
                     'unit_size' => $unit['unitSize'],
+                    'cubic_footage' => $unit['vacantUnits'],
                     'post_id' => $post_id,
                     'enable' => true,
                     'created_by' => Auth::id(),
                     'updated_by' => Auth::id(),
                     'created_at' => now(),
                     'updated_at' => now(),
+                    'vacant_units' => $unit['vacantUnits']
                 ]);
             } else {
                 
@@ -115,6 +117,7 @@ class UnitController extends Controller
                     $db_unit->unit_size = $unit['unitSize'];
                     $db_unit->cubic_footage = $unit['cubicFootage'];
                     $db_unit->location_name = $unit['locationName'];
+                    $db_unit->vacant_units = $unit['vacantUnits'];
                     $db_unit->save();
                 }
             }
